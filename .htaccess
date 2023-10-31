@@ -1,0 +1,10 @@
+RewriteEngine On
+Options All -Indexes
+
+#Prevenir accesos al archivo .htaccess
+<files .htaccess>
+    order allow,deny
+    deny from all
+</files>
+
+RewriteRule ^([0-9a-zA-Z-_@./]+)$ index.php?route=$1 [L,QSA]
